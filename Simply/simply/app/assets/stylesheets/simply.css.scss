@@ -1,4 +1,21 @@
-  .navbar {
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+
+
+body {
+  background-color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  }
+
+html, body, .container-fluid, .row, .col-md-12 {
+  height: 100%;
+}
+
+//Begin navbar
+.navbar {
     margin-bottom: 0px;
   }
 
@@ -53,3 +70,47 @@ $colHighlight   : #ffffff;
         color: $colHighlight;
         background-color: $bgHighlight; }}}
 }
+// end navbar
+
+
+  .container-fluid {
+
+    .row {
+      text-align: center;
+      padding-top: 60px;
+      background-color: black;
+      color: #ca3;
+      overflow: auto;
+
+      h1 {
+        font-family: 'Georgia', sans-serif;
+        text-align: center;
+      }
+
+      .landing-image {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .quote {
+        font-style: italic;
+      }
+      .welcome {
+        background-color: transparent;
+        color: #ca3;  
+      }
+
+    }
+    
+  }
+  
+// I don't know if this is required, as Bootstrap may take care of it.
+@media (max-width: 991px) {
+  body {
+    margin-top: 26px;
+  }
+  h1 {
+  padding-top: 20px;
+  }
+}
+

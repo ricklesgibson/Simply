@@ -12,15 +12,17 @@ class UsersController < ApplicationController #bitchezzzzz!!!!
     
   
   def create  
-    @user = User.new(params.require(:user).permit(:email, :password, :password_confirmation))
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'user was successfully created.' }
-        # format.json { render :show, status: :created, location: @order }
+    user = User.new(params.require(:user).permit(:email, :password, :password_confirmation))
+    #respond_to do |format|
+      if user.save
+          redirect_to new_sessions_path
+        #format.html { redirect_to @user, notice: 'user was successfully created.' }
+        #format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new }
-        # format.json { render json: @user.errors, status: :unprocessable_entity }
+        redirect_to new_user_path
+        #format.html { render :new }
+        #format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    end
+    #end
   end
 end

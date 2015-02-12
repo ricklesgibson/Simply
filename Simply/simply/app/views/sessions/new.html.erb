@@ -1,0 +1,12 @@
+<h1>Log in, Fool!</h1>
+
+<%= form_for @user, :url => { :controller => "sessions", :action => "create" } do |f| %>
+
+  <div class="field">
+    email<%= f.text_field :email %><br>
+   password <%= f.password_field :password %> 
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
