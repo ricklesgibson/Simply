@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy] #this is a singular resource, not resources.
-  resources :users, only: [:index, :new, :create]
+  resources :users, only: [:index, :new, :create, :show]
   root 'users#index'
   #get 'login', to: 'sessions#new', as: :new_sessions
 

@@ -14,8 +14,17 @@
 </head>
 <body>
 <%= render partial: 'layouts/nav'%>
+<div class="container-fluid">
+
+  <div class="row" id="welcome">
+      <div class="col-md-12 welcome">
+        <h1>simply.me</h1>
+        <%=image_tag("Piercycle.jpg", class: "landing-image")%>
+      </div>
+  </div>
+</div>
 
 <%= yield %>
-<%=session["user_id"].inspect%><hr />
+<%=session["user_id"].inspect%><hr /><br />
 </body>
 </html>

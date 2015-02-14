@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     u = User.where(email: params[:user][:email]).first
     if u !=nil && u.authenticate(params[:user][:password]) #this returns the object and is truthy, if correct password supplied
       session["user_id"] = u.id.to_s #converts user ID to a string. 
-      redirect_to users_path #this is where we specify what we want a valid login to redirect to
+      redirect_to u #this is where we specify what we want a valid login to redirect to
     end
   end
 
