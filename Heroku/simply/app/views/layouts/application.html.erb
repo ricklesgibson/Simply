@@ -1,0 +1,30 @@
+  <!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/1.1.1/parallax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"></link> -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"> 
+  <title>Simply</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render partial: 'layouts/nav'%>
+<div class="container-fluid">
+
+  <div class="row" id="welcome">
+      <div class="col-md-12 welcome">
+        <h1>simply.me</h1>
+        <%=image_tag("Piercycle.jpg", class: "landing-image")%>
+      </div>
+  </div>
+</div>
+
+<%= yield %>
+<%=session["user_id"].inspect%><hr /><br />
+</body>
+</html>
