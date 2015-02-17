@@ -14,10 +14,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"> <a href="#">Welcome</a></li>
-        <li class="active"> <a href=<%= '/users/new' %>>Sign Up</a></li>
-        <li class="active"> <a href=<%= '/sessions/new' %>>Sign In</a></li>
-
+        
+          <% if current_user != nil %>
+          <li class="active"> <%#= link_to "Home", show_user_path %></li>
+            <li class="active"> <%= link_to "Log out", sessions_path, method: :delete %></li>
+            <li class="active"> <%= link_to "Edit Profile", edit_user_path %></li>
+          <% else %>
+            <li class="active"> <%= link_to "Sign up", new_user_path, method: :get %></li>
+            <li class="active"> <%= link_to "Log in", new_sessions_path %></li>
+            <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
