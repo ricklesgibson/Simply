@@ -17,4 +17,4 @@
 /tmp
 
 #Ignore the _nav partial because it has an API key
-/app/view/layouts/_map.html.erb
+/app/views/layouts/_map.html.erb
