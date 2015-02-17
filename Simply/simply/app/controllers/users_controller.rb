@@ -1,6 +1,6 @@
 class UsersController < ApplicationController #bitchezzzzz!!!!
   def index
-    @user = User.all 
+    @users = User.all 
   end
   def new
     @user = User.new
@@ -33,6 +33,7 @@ class UsersController < ApplicationController #bitchezzzzz!!!!
     user = User.new(params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :bio_text))
     #respond_to do |format|
       if user.save
+          UserMailer.welcome(user).deliver_now
           redirect_to new_sessions_path
         #format.html { redirect_to @user, notice: 'user was successfully created.' }
         #format.json { render :show, status: :created, location: @order }
@@ -52,6 +53,6 @@ private
     end
 
     def user_params
-      params.require(:user).permit(:email, :first_name, :last_name, :bio_text)
+      params.require(:user).permit(:email, :first_name, :last_name, :bio_text, :avatar)
     end
 end

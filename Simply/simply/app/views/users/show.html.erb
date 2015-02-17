@@ -15,6 +15,16 @@
 <%= @user.first_name %><br />
 <%= @user.last_name %><br />
 <%= @user.bio_text %><br />
+<%= image_tag @user.avatar.url(:thumb) %>
+
+Photo time!
+            <% @user.photos.each do |p| %>
+                <%= image_tag p.image.url(:original) %><br />
+          
+            <% end %>
+      
+  
+
 
 
 <%= render partial: 'layouts/map'%>

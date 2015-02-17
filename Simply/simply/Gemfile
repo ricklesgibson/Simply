@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem "paperclip", "~> 4.2"
 #added this because it's what made our other Heroku deploy from rails work.
 gem 'rails_12factor', group: :production
 
@@ -46,8 +46,13 @@ group :development, :test do
 
   gem "better_errors"
 
+  #added with Ira in lesson
+  gem 'httparty'
+
+  #added in ActionMailer lesson with Ira
+  gem "letter_opener" 
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  #gem 'spring'
 end
 
