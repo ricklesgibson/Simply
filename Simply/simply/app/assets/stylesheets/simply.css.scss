@@ -21,8 +21,8 @@
 
 
 body {
-  background-color: white;
-  font-family: 'Roboto Condensed', sans-serif;
+  background-color: blue;
+  font-family: Helvetica, sans-serif;
   }
 
 html, body, .container-fluid, .row, .col-md-12 {
@@ -87,19 +87,18 @@ $colHighlight   : #ffffff;
 }
 // end navbar
 
-
   .container-fluid {
 
     .row {
       text-align: center;
       padding-top: 60px;
-      background-color: black;
-      color: #ca3;
-      overflow: auto;
+      background-color: grey;
+      color: blue;
+      //overflow: auto;
 
       h1 {
         font-family: 'Georgia', sans-serif;
-        text-align: center;
+        text-align: left;
       }
 
       .landing-image {
@@ -107,12 +106,9 @@ $colHighlight   : #ffffff;
         margin: 0 auto;
       }
 
-      .quote {
-        font-style: italic;
-      }
       .welcome {
         background-color: transparent;
-        color: #ca3;  
+        color: pink;  
       }
 
     }
